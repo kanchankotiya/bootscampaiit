@@ -1,0 +1,50 @@
+<%= form_with(model: student, local: true) do |form| %>
+  <% if student.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(student.errors.count, "error") %> prohibited this student from being saved:</h2>
+
+      <ul>
+      <% student.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="form-group">
+    <%= form.text_field :name, id: :student_name,class: "form-control", placeholder: "Your Name" %>
+  </div>  
+
+  <div class="form-group">
+    <%= form.text_field :collage, id: :student_collage , class: "form-control", class: "form-control",  placeholder: "Your Collage"%>
+  </div>
+
+  <div class="form-group">
+    <%= form.text_field :email, id: :student_email, class: "form-control",placeholder: "Your Email" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.text_field :contact, id: :student_contact , class: "form-control",placeholder: "Your Contact"%>
+  </div>
+
+  <div class="form-group">
+    <%= form.text_field :course, id: :student_course , class: "form-control",placeholder: "Course"%>
+  </div>
+
+  <div class="form-group">
+    <%= form.text_field :branch, id: :student_branch , class: "form-control", placeholder: "Branch"%>
+  </div>
+
+  <div class="form-group">
+    <%= form.text_field :registration_number, id: :student_registration_number, class: "form-control", placeholder: "Registration Number" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.file_field :image, id: :student_image %>
+  </div>
+
+
+  <div class="actions">
+    <%= form.submit class: "btn btn-secondary" %>
+  </div>
+<% end %>
+  

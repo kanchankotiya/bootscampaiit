@@ -1,0 +1,12 @@
+<div class="jumbotron">
+  <h1 class="display-4 text-center">Assignments</h1>
+  <hr class="my-4">
+ 
+</div>
+<div class="container">
+  <div class="list-group">
+    <% @assignments.each do |assignment| %>
+      <%= link_to (assignment.topic),assignment, class: "list-group-item list-group-item-action" %>
+    <% end %>
+  </div>
+</div>  
